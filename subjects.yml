@@ -1,0 +1,44 @@
+---
+header:
+  title: Game 2D
+  nav_logo: https://4.bp.blogspot.com/-h_NjR_vNLQI/XDG00QSYerI/AAAAAAABQ8A/5jqs8mFNZEU-rcSmEuDykk2LstHaDpwLQCLcBGAs/s400/game_kyoutai_man.png
+  media_path: ""
+  width: 100%
+data:
+
+  _global:
+    script_global_example: console.log("Global Example Script loaded"); 
+  game:
+    subject: Game
+    id: game
+    title: 2D Game
+    sub_title: Planned to be a simple dungeon crawler game
+    default: true
+    width: 100%
+    content: <canvas id="canvas"></canvas>
+    content_input: >
+      <input id="test" type="number" value = 8 step=8 min=8 max=256 hidden>
+    #   <button name="a">Left</button>
+    #   <button name="w">Forward</button>
+    #   <button name="s">Backward</button>
+    #   <button name="d">Right</button>
+
+    #   <input id="w" type="number" value=0 step=1 min=0 max=1 hidden>
+    #   <input id="a" type="number" value=0 step=1 min=0 max=1 hidden>
+    #   <input id="s" type="number" value=0 step=1 min=0 max=1 hidden>
+    #   <input id="d" type="number" value=0 step=1 min=0 max=1 hidden>
+    # script_input_events: >
+    #   $('button').click(function() {
+    #     var id = $(this).attr('name');
+    #     $('#'+id).val(1);
+    #     setTimeout(function() {
+    #       $('#'+id).val(0);
+    #     }, 100);
+    #   });
+    script_load_modules: >
+      var Module = {
+        onRuntimeInitialized: function(){
+        },
+        canvas: (function() { return document.getElementById('canvas'); })()
+      };
+    script: main.js
